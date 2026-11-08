@@ -1,10 +1,16 @@
 # TempoExtra
 
-Projeto Integrador desenvolvido como trabalho acadêmico. Consiste em um aplicativo Android para o gerenciamento de horas complementares de alunos de graduação.
+Aplicativo Android para gestão de horas complementares, desenvolvido como trabalho acadêmico para o Projeto Integrador V do curso de Sistemas de Informação do Centro Universitário UNIFACEAR (2022).
 
 **Autores:** Guilherme da Luz Weber e Mateus Chaves
 
+**Orientador:** Prof. Rafael do Carmo Kerneski
+
+A documentação completa do projeto está disponível em [docs/documentacao-projeto-integrador.docx](docs/documentacao-projeto-integrador.docx).
+
 ## Descrição
+
+Muitas instituições de ensino não possuem uma plataforma unificada e simples para o acompanhamento de horas complementares. O TempoExtra foi criado para facilitar a visualização das horas complementares dos alunos e dos requerimentos enviados à instituição, além de permitir que os coordenadores de curso gerenciem esses requerimentos com facilidade.
 
 O aplicativo permite que alunos enviem pedidos de validação de atividades complementares ao coordenador do seu curso. O coordenador analisa cada pedido e decide se ele é deferido, informando a quantidade de horas a ser creditada, ou indeferido. O saldo de horas do aluno é atualizado automaticamente.
 
@@ -64,7 +70,11 @@ Os dados são armazenados localmente no dispositivo.
 ## Tecnologias
 
 - Java
-- Android SDK (API 21 a 32)
+- Android SDK (API 21 a 32) e Android Jetpack
 - Room (persistência local em SQLite)
 - RecyclerView e Material Components
 - StyleableToast (mensagens de confirmação e erro)
+
+## Documentação
+
+O documento em [docs/documentacao-projeto-integrador.docx](docs/documentacao-projeto-integrador.docx) apresenta o processo completo de desenvolvimento: PM Canvas, análise de concorrência, requisitos, regras de negócio, diagramas de casos de uso, de classes e de entidade e relacionamento, além do protótipo das telas.
