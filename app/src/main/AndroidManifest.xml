@@ -10,33 +10,33 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.splash">
         <activity
-            android:name=".TelaAlunoAnalisa"
+            android:name=".ui.TelaAlunoAnalisa"
             android:exported="false" />
         <activity
-            android:name=".TelaCoordenadorAnalisa"
+            android:name=".ui.TelaCoordenadorAnalisa"
             android:exported="false" />
         <activity
-            android:name=".TelaHomeCoordenador"
+            android:name=".ui.TelaHomeCoordenador"
             android:exported="false" />
         <activity
-            android:name=".TelaAlunoVisualizar"
+            android:name=".ui.TelaAlunoVisualizar"
             android:exported="false" />
         <activity
-            android:name=".TelaAlunoPedido"
+            android:name=".ui.TelaAlunoPedido"
             android:exported="false" />
         <activity
-            android:name=".TelaHomeScreen"
+            android:name=".ui.TelaHomeScreen"
             android:exported="false" />
         <activity
-            android:name=".TelaAdm"
+            android:name=".ui.TelaAdm"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".TelaCadastroAluno"
+            android:name=".ui.TelaCadastroAluno"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.MainActivity"
             android:exported="true"
             android:screenOrientation="portrait">
             <intent-filter>

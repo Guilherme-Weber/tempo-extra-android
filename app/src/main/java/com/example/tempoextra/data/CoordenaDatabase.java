@@ -1,4 +1,4 @@
-package com.example.tempoextra.roomdatabase;
+package com.example.tempoextra.data;
 
 import android.content.Context;
 

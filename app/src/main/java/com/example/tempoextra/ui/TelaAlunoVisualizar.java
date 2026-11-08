@@ -1,4 +1,7 @@
-package com.example.tempoextra;
+package com.example.tempoextra.ui;
+
+import com.example.tempoextra.R;
+import com.example.tempoextra.ui.adapter.AlunoPedidoAdapter;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,9 +17,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.example.tempoextra.roomdatabase.PedidoDao;
-import com.example.tempoextra.roomdatabase.PedidoDatabase;
-import com.example.tempoextra.roomdatabase.PedidoEntity;
+import com.example.tempoextra.data.PedidoDao;
+import com.example.tempoextra.data.PedidoDatabase;
+import com.example.tempoextra.data.PedidoEntity;
 
 import java.util.ArrayList;
 import java.util.List;

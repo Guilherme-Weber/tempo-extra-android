@@ -1,4 +1,6 @@
-package com.example.tempoextra;
+package com.example.tempoextra.ui.adapter;
+
+import com.example.tempoextra.R;
 
 import android.view.View;
 import android.widget.TextView;

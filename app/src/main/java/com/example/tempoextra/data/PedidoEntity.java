@@ -1,4 +1,4 @@
-package com.example.tempoextra.roomdatabase;
+package com.example.tempoextra.data;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;

@@ -1,4 +1,6 @@
-package com.example.tempoextra;
+package com.example.tempoextra.ui;
+
+import com.example.tempoextra.R;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -13,13 +15,13 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.tempoextra.roomdatabase.CoordenaDao;
-import com.example.tempoextra.roomdatabase.CoordenaDatabase;
-import com.example.tempoextra.roomdatabase.CoordenaEntity;
-import com.example.tempoextra.roomdatabase.PedidoDao;
-import com.example.tempoextra.roomdatabase.PedidoDatabase;
-import com.example.tempoextra.roomdatabase.PedidoEntity;
-import com.example.tempoextra.roomdatabase.UserEntity;
+import com.example.tempoextra.data.CoordenaDao;
+import com.example.tempoextra.data.CoordenaDatabase;
+import com.example.tempoextra.data.CoordenaEntity;
+import com.example.tempoextra.data.PedidoDao;
+import com.example.tempoextra.data.PedidoDatabase;
+import com.example.tempoextra.data.PedidoEntity;
+import com.example.tempoextra.data.UserEntity;
 
 import io.github.muddz.styleabletoast.StyleableToast;
 

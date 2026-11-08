@@ -1,4 +1,7 @@
-package com.example.tempoextra;
+package com.example.tempoextra.ui.adapter;
+
+import com.example.tempoextra.R;
+import com.example.tempoextra.ui.TelaAlunoAnalisa;
 
 import android.content.Context;
 import android.content.Intent;
@@ -13,7 +16,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.tempoextra.roomdatabase.PedidoEntity;
+import com.example.tempoextra.data.PedidoEntity;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,6 @@
-package com.example.tempoextra;
+package com.example.tempoextra.ui;
+
+import com.example.tempoextra.R;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;

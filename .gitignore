@@ -17,3 +17,13 @@ local.properties
 # Arquivos do Windows
 desktop.ini
 Thumbs.db
+
+# Configurações locais do Android Studio
+.idea/
+
+# Ferramentas de IA (fora do projeto principal)
+.agents/
+.claude/
+skills-lock.json
+CLAUDE.md
+AGENTS.md

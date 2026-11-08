@@ -30,11 +30,21 @@ O sistema possui três perfis de acesso:
 ## Estrutura do repositório
 
 ```
-app/src/main/java/com/example/tempoextra/                Telas (Activities) e adaptadores das listas
-app/src/main/java/com/example/tempoextra/roomdatabase/   Entidades, DAOs e bancos de dados (Room)
-app/src/main/res/                                        Layouts, ícones e demais recursos
-app/schemas/                                             Esquemas exportados dos bancos de dados
-docs/documentacao-projeto-integrador.docx                Documentação do projeto
+tempo-extra-android/
+├── app/
+│   ├── schemas/                      Esquemas exportados dos bancos de dados (Room)
+│   └── src/main/
+│       ├── java/com/example/tempoextra/
+│       │   ├── data/                 Entidades, DAOs e bancos de dados (Room)
+│       │   └── ui/                   Telas (Activities)
+│       │       └── adapter/          Adaptadores e ViewHolders das listas
+│       ├── res/                      Layouts, ícones e demais recursos
+│       └── AndroidManifest.xml
+├── docs/
+│   └── documentacao-projeto-integrador.docx
+├── gradle/wrapper/
+├── build.gradle
+└── settings.gradle
 ```
 
 ## Requisitos
@@ -45,7 +55,7 @@ docs/documentacao-projeto-integrador.docx                Documentação do proje
 
 ## Execução
 
-1. Clone o repositório e abra a pasta no Android Studio.
+1. Clone o repositório (`git clone https://github.com/Guilherme-Weber/tempo-extra-android.git`) e abra a pasta no Android Studio.
 2. Aguarde a sincronização do Gradle.
 3. Execute o módulo `app` em um emulador ou dispositivo conectado.
 

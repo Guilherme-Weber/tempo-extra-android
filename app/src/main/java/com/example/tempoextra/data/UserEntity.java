@@ -1,23 +1,28 @@
-package com.example.tempoextra.roomdatabase;
+package com.example.tempoextra.data;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-@Entity(tableName = "Coordenador")
-public class CoordenaEntity {
+import java.util.Objects;
+
+@Entity(tableName = "Aluno")
+public class UserEntity {
 
     @PrimaryKey(autoGenerate = true)
     Integer id;
 
-    @ColumnInfo(name = "coordenaID")
-    String CoordenaId;
+    @ColumnInfo(name = "userID")
+    String UserId;
 
     @ColumnInfo(name = "senha")
     String Senha;
 
     @ColumnInfo(name = "nome")
     String Nome;
+
+    @ColumnInfo(name = "horas")
+    int Horas;
 
     @ColumnInfo(name = "curso")
     String Curso;
@@ -30,12 +35,12 @@ public class CoordenaEntity {
         this.id = id;
     }
 
-    public String getCoordenaId() {
-        return CoordenaId;
+    public String getUserId() {
+        return UserId;
     }
 
-    public void setCoordenaId(String coordenaId) {
-        CoordenaId = coordenaId;
+    public void setUserId(String userId) {
+        UserId = userId;
     }
 
     public String getSenha() {
@@ -52,6 +57,14 @@ public class CoordenaEntity {
 
     public void setNome(String nome) {
         Nome = nome;
+    }
+
+    public int getHoras() {
+        return Horas;
+    }
+
+    public void setHoras(int horas) {
+        Horas = horas;
     }
 
     public String getCurso() {

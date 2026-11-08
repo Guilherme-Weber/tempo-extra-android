@@ -1,4 +1,6 @@
-package com.example.tempoextra;
+package com.example.tempoextra.ui;
+
+import com.example.tempoextra.R;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,27 +11,26 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.tempoextra.roomdatabase.CoordenaDao;
-import com.example.tempoextra.roomdatabase.CoordenaDatabase;
-import com.example.tempoextra.roomdatabase.CoordenaEntity;
-import com.example.tempoextra.roomdatabase.UserDao;
-import com.example.tempoextra.roomdatabase.UserDatabase;
-import com.example.tempoextra.roomdatabase.UserEntity;
+import com.example.tempoextra.data.CoordenaDao;
+import com.example.tempoextra.data.CoordenaDatabase;
+import com.example.tempoextra.data.CoordenaEntity;
+import com.example.tempoextra.data.UserDao;
+import com.example.tempoextra.data.UserDatabase;
+import com.example.tempoextra.data.UserEntity;
 
 import io.github.muddz.styleabletoast.StyleableToast;
 
-public class TelaAdm extends AppCompatActivity {
+public class TelaCadastroAluno extends AppCompatActivity {
 
     Button btn_voltar, btn_cadastrar;
     EditText nometext, emailtext, senhatext, confsenhatext, cursotext;
-    int val = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setTheme(R.style.Theme_TempoExtra);
-        setContentView(R.layout.activity_tela_adm);
+        setContentView(R.layout.activity_cadastro);
         getSupportActionBar().hide();
 
         nometext = findViewById(R.id.nomeText);
@@ -39,7 +40,7 @@ public class TelaAdm extends AppCompatActivity {
         cursotext = findViewById(R.id.cursoText);
 
         btn_voltar = findViewById(R.id.btn_voltar);
-        btn_cadastrar = findViewById(R.id.btn_cadastrar_coordenador);
+        btn_cadastrar = findViewById(R.id.btn_cadastrar);
 
         UserDatabase userDatabase = UserDatabase.getUserDatabase(getApplicationContext());
         UserDao userDao = userDatabase.userDao();
@@ -56,17 +57,14 @@ public class TelaAdm extends AppCompatActivity {
         btn_voltar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                TelaMain();
+                telaMain();
             }
         });
 
         //FUNÇÕES DE CADASTRAR
         btn_cadastrar.setOnClickListener(new View.OnClickListener() {
-
             @Override
-            public void onClick(View v) {
-                val = 0;
-
+            public void onClick(View view) {
                 final String nome = nometext.getText().toString();
                 final String email = emailtext.getText().toString();
                 final String senha = senhatext.getText().toString();
@@ -77,34 +75,34 @@ public class TelaAdm extends AppCompatActivity {
                         email.isEmpty() ||
                         senha.isEmpty() ||
                         curso.isEmpty()) {
-                    toastErradoCampos(); //TOAST DE CAMPOS INCOMPLETOS
+                    toastErradoCampos(); // TOAST DE CAMPOS PRREENCHIDOS
                 } else {
-
-                    //checa pra ver se as senhas são iguais
+                    //checa se os dois campos de senha estão iguais
                     if (new String(senhatext.getText().toString()).equals(new String(confsenhatext.getText().toString()))) {
                         new Thread(new Runnable() {
                             @Override
                             public void run() {
                                 UserEntity userEntity = userDao.loginEmail(emailtext.getText().toString());
                                 CoordenaEntity coordenaEntity = coordenaDao.loginEmail(emailtext.getText().toString());
-
                                 //checa pra ver se ambas as Entitys estão vasias, com ambas vazias o email não esta cadastro no sistema
                                 if (userEntity == null && coordenaEntity == null) {
-
-                                    //coloca as informações digitadas na UserEntity
-                                    //e cadastra o coordenador
-                                    putOnCoordena();
+//                                  coloca as informações digitadas na UserEntity
+//                                  e cadastra o usuario
+                                    putOnUser();
                                     runOnUiThread(new Runnable() {
                                         @Override
                                         public void run() {
-                                            toastCorretoCadastro();// TOAST DE CADASTRAR COORDENADOR
+                                            toastCorretoCadastro();// TOAST DE CADASTRO CORRETO
+                                            Intent tela = new Intent(TelaCadastroAluno.this, MainActivity.class);
+                                            startActivity(tela);
+                                            finish();
                                         }
                                     });
                                 } else {
                                     runOnUiThread(new Runnable() {
                                         @Override
                                         public void run() {
-                                            toastErradoEmail();// TOAST EMAIL JÁ EXISTE
+                                            toastErradoEmail(); // TOAST DE VERIFICAR EMAIL
                                             finish();
                                             startActivity(getIntent());
                                         }
@@ -113,39 +111,35 @@ public class TelaAdm extends AppCompatActivity {
                             }
                         }).start();
                     } else {
-                        toastErradoSenha();// TOAST DE SENHA ERRADA
+                        toastErradoSenha(); //TOAST DE SENHA ERRADA
                     }
                 }
             }
         });
     }
 
-    public void putOnCoordena() {
-        CoordenaEntity coordenaEntity = new CoordenaEntity();
-
+    public void putOnUser() {
+        UserEntity userEntity = new UserEntity();
         //coloca as informações dentro da Entity
-        coordenaEntity.setNome(nometext.getText().toString());
-        coordenaEntity.setCoordenaId(emailtext.getText().toString());
-        coordenaEntity.setSenha(senhatext.getText().toString());
-        coordenaEntity.setCurso(cursotext.getText().toString());
-
-        CoordenaDatabase coordenaDatabase = CoordenaDatabase.getCoordenaDatabase(getApplicationContext());
-        CoordenaDao coordenaDao = coordenaDatabase.coordenaDao();
-
+        userEntity.setNome(nometext.getText().toString());
+        userEntity.setUserId(emailtext.getText().toString());
+        userEntity.setSenha(senhatext.getText().toString());
+        userEntity.setCurso(cursotext.getText().toString());
+        UserDatabase userDatabase = UserDatabase.getUserDatabase(getApplicationContext());
+        UserDao userDao = userDatabase.userDao();
         //Fazer o Insert
         //Registra Usuario
-        coordenaDao.registerCoordena(coordenaEntity);
+        userDao.registerUser(userEntity);
     }
 
-
-    public void TelaMain() {
-        Intent tela = new Intent(TelaAdm.this, MainActivity.class);
+    public void telaMain() {
+        Intent tela = new Intent(TelaCadastroAluno.this, MainActivity.class);
         startActivity(tela);
         finish();
     }
 
     public void toastCorretoCadastro() {
-        StyleableToast.makeText(this, "Coordenador Cadastrado!", R.style.toast_verificado).show();
+        StyleableToast.makeText(this, "Aluno Cadastrado!", R.style.toast_verificado).show();
     }
 
     public void toastErradoCampos() {
