@@ -27,3 +27,6 @@ Thumbs.db
 skills-lock.json
 CLAUDE.md
 AGENTS.md
+
+# Configurações locais do VS Code
+.vscode/

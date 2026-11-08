@@ -50,7 +50,8 @@ tempo-extra-android/
 ## Requisitos
 
 - Android Studio
-- JDK 8 ou superior
+- JDK 17 (configurado em *Settings → Build Tools → Gradle → Gradle JDK*)
+- Android SDK Platform 32 (Android 12L) e Build-Tools 33.0.0, instalados pelo *SDK Manager*
 - Dispositivo ou emulador com Android 5.0 (API 21) ou superior
 
 ## Execução
@@ -66,6 +67,14 @@ gradlew assembleDebug
 ```
 
 O arquivo é gerado em `app/build/outputs/apk/debug/`.
+
+Para gerar o APK de release (`TempoExtra-v1.1a-release.apk`, em `app/build/outputs/apk/release/`):
+
+```
+gradlew assembleRelease
+```
+
+O APK pronto para instalar também está disponível na página de [Releases](https://github.com/Guilherme-Weber/tempo-extra-android/releases). As mudanças de cada versão estão no [CHANGELOG.md](CHANGELOG.md).
 
 ## Utilização
 

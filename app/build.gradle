@@ -11,6 +11,7 @@ android {
         targetSdk 32
         versionCode 1
         versionName '1.1a'
+        setProperty("archivesBaseName", "TempoExtra-v${versionName}")
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
@@ -24,6 +25,8 @@ android {
     buildTypes {
         release {
             minifyEnabled false
+            // Assinado com a chave de debug para permitir a instalação direta do APK
+            signingConfig signingConfigs.debug
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
