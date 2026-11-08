@@ -13,3 +13,7 @@
 .externalNativeBuild
 .cxx
 local.properties
+
+# Arquivos do Windows
+desktop.ini
+Thumbs.db
