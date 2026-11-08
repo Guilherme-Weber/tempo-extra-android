@@ -117,7 +117,7 @@ public class MainActivity extends AppCompatActivity {
                                     runOnUiThread(new Runnable() {
                                         @Override
                                         public void run() {
-                                            Toast.makeText(getApplicationContext(), "RATINHO JUNIOR PARABENS VC N DEVIA ESTAR LENDO ISSO", Toast.LENGTH_SHORT).show();
+                                            Toast.makeText(getApplicationContext(), "Erro ao realizar login. Tente novamente.", Toast.LENGTH_SHORT).show();
                                         }
                                     });
                                 }

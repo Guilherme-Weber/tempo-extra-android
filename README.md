@@ -53,7 +53,7 @@ O arquivo é gerado em `app/build/outputs/apk/debug/`.
 
 ## Utilização
 
-1. Acesse com o usuário administrador (e-mail `admin`, senha `1234`) e cadastre um coordenador, informando o curso.
+1. Acesse com a conta de administrador e cadastre um coordenador, informando o curso.
 2. Na tela inicial, cadastre um aluno vinculado ao mesmo curso.
 3. Com a conta do aluno, abra um pedido informando o e-mail do coordenador, o tipo de atividade e a descrição.
 4. Com a conta do coordenador, abra o pedido e defira-o (informando as horas) ou indefira-o.
